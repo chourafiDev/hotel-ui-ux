@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { ArrowRightIcon } from "@/lib/assets";
 import { Button } from "./ui/button";
