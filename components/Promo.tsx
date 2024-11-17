@@ -51,6 +51,7 @@ const Promo = () => {
             alt="promo1"
             fill
             className="absolute object-cover"
+            placeholder="blur"
           />
         </div>
         <div className="relative w-full h-72 rounded-lg overflow-hidden">
@@ -88,6 +89,7 @@ const Promo = () => {
             alt="promo2"
             fill
             className="absolute object-cover"
+            placeholder="blur"
           />
         </div>
       </div>

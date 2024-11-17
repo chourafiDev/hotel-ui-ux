@@ -34,7 +34,7 @@ const DestinationCard = ({
       </div>
 
       <div className="relative w-full h-36 rounded-xl overflow-hidden mt-2">
-        <Image src={image} alt={city} fill className="absolute object-cover" />
+        <Image src={image} alt={city} fill className="absolute object-cover" placeholder="blur" />
       </div>
     </div>
   );

@@ -43,6 +43,7 @@ const Info = () => {
             src={image5}
             fill
             className="absolute object-cover"
+            placeholder="blur"
           />
         </div>
         <div className="relative rounded-xl overflow-hidden w-full h-[280px]">
@@ -59,6 +60,7 @@ const Info = () => {
             src={image7}
             fill
             className="absolute object-cover"
+            placeholder="blur"
           />
         </div>
       </div>
@@ -72,6 +74,7 @@ const Info = () => {
           src={image6}
           fill
           className="absolute object-cover"
+          placeholder="blur"
         />
       </div>
     </section>

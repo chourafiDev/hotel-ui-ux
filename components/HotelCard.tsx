@@ -25,7 +25,7 @@ const HotelCard = ({
   return (
     <>
       <div className="relative w-full h-64 rounded-xl overflow-hidden">
-        <Image alt={title} src={image} fill className="absolute object-cover" />
+        <Image alt={title} src={image} fill className="absolute object-cover" placeholder="blur" />
 
         <button className="absolute top-3 right-3 bg-white/20 backdrop-blur-lg size-7 rounded-full flex items-center justify-center">
           {favorite ? (
