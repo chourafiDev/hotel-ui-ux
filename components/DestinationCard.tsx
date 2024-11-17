@@ -7,7 +7,7 @@ type DestinationCardprops = {
     city: string;
     available: string;
     image: StaticImageData;
-    Icon: React.ComponentType<any>;
+    Icon: React.ElementType;
   };
 };
 
@@ -18,10 +18,14 @@ const DestinationCard = ({
     <div>
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-slate-900 dark:text-white font-medium text-lg">{city}</p>
+          <p className="text-slate-900 dark:text-white font-medium text-lg">
+            {city}
+          </p>
           <div className="flex items-center gap-1">
             <Icon className="text-slate-900/50 dark:text-white/60 size-4" />
-            <p className="text-slate-900/50 dark:text-white/60 text-sm mt-[2px]">{available}</p>
+            <p className="text-slate-900/50 dark:text-white/60 text-sm mt-[2px]">
+              {available}
+            </p>
           </div>
         </div>
         <button className="size-11 flex items-center justify-center rounded-lg border border-gray-100 dark:border-white/10">

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { AltArrowLeftIcon, AltArrowRightIcon } from "@/lib/assets";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -10,17 +10,8 @@ import { mostVisitedHotel } from "@/lib/data";
 import HotelCard from "./HotelCard";
 
 const MostVisited = () => {
-  const prevRef = useRef<HTMLDivElement>(null);
-  const nextRef = useRef<HTMLDivElement>(null);
-  const swiperRef = useRef<any>(null);
-
-  useEffect(() => {
-    if (swiperRef.current) {
-      swiperRef.current.params.navigation.prevEl = prevRef.current;
-      swiperRef.current.params.navigation.nextEl = nextRef.current;
-      swiperRef.current.navigation.update();
-    }
-  }, []);
+  const prev2Ref = useRef<HTMLButtonElement>(null);
+  const next2Ref = useRef<HTMLButtonElement>(null);
 
   return (
     <section className="mt-14 md:px-6 px-1">
@@ -42,10 +33,18 @@ const MostVisited = () => {
           }}
           modules={[Navigation]}
           navigation={{
-            prevEl: prevRef.current,
-            nextEl: nextRef.current,
+            prevEl: prev2Ref.current,
+            nextEl: next2Ref.current,
           }}
-          onSwiper={(swiper) => (swiperRef.current = swiper)}
+          onBeforeInit={(swiper) => {
+            // @ts-ignore
+            // eslint-disable-next-line no-param-reassign
+            swiper.params.navigation.prevEl = prev2Ref.current;
+            // @ts-ignore
+            // eslint-disable-next-line no-param-reassign
+            swiper.params.navigation.nextEl = next2Ref.current;
+            swiper.navigation.update();
+          }}
           breakpoints={{
             0: {
               slidesPerView: 1,
@@ -78,18 +77,18 @@ const MostVisited = () => {
         </Swiper>
 
         <div className="flex items-center justify-center gap-x-2 mt-5">
-          <div
+          <button
             className="size-10 border border-slate-900/10 dark:border-white/10 cursor-pointer rounded-full flex justify-center items-center"
-            ref={prevRef}
+            ref={prev2Ref}
           >
             <AltArrowLeftIcon className="size-5" />
-          </div>
-          <div
+          </button>
+          <button
             className="size-10 border border-slate-900/10 dark:border-white/10 cursor-pointer rounded-full flex justify-center items-center"
-            ref={nextRef}
+            ref={next2Ref}
           >
             <AltArrowRightIcon className="size-5" />
-          </div>
+          </button>
         </div>
       </div>
     </section>

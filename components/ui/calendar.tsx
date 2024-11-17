@@ -42,9 +42,7 @@ function Calendar({
             ? "[&:has(>.day-range-end)]:rounded-r-md [&:has(>.day-range-start)]:rounded-l-md first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md"
             : "[&:has([aria-selected])]:rounded-md"
         ),
-        day: cn(
-          "h-8 w-8 p-0 rounded-lg font-normal aria-selected:opacity-100 dark:bg-slate-900 dark:text-white"
-        ),
+        day: cn("h-8 w-8 p-0 rounded-lg font-normal"),
         day_range_start: "day-range-start",
         day_range_end: "day-range-end bg-slate-600",
         day_selected:
@@ -60,8 +58,8 @@ function Calendar({
         ...classNames,
       }}
       components={{
-        IconLeft: ({ ...props }) => <ChevronLeft className="h-4 w-4" />,
-        IconRight: ({ ...props }) => <ChevronRight className="h-4 w-4" />,
+        IconLeft: () => <ChevronLeft className="h-4 w-4" />,
+        IconRight: () => <ChevronRight className="h-4 w-4" />,
       }}
       {...props}
     />

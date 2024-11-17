@@ -163,4 +163,14 @@ export const mostVisitedHotel = [
     image: image16,
     favorite: false,
   },
+  {
+    id: 5,
+    title: "Elysée Retreat",
+    city: "Paris",
+    review: "4.8 (3,789 Reviews)",
+    price: 150,
+    oldPrice: 240,
+    image: image9,
+    favorite: true,
+  },
 ];
